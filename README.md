@@ -10,3 +10,4 @@ Repo de practica del plan DevOps.
 -'feature/*' -- funcionalidades nuevas
 
 -'hotfix/*' correciones urgentes en produccion
+# Develop branch activa
