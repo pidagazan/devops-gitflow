@@ -1,13 +1,34 @@
-#DevOps Portfolio -- Path
+El README final del entregable
+cat > README.md << 'EOF'
+# DevOps Portfolio —  Path
 
-Repo de practica del plan DevOps.
+Demostración del flujo Gitflow aplicado a scripts de administración Linux.
 
-## Ramas
--'main' -- codigo estable, solo merge via PR
+## Flujo de trabajo
 
--'develop' -- integracion continua
+| Rama | Propósito | Se crea desde | Merge hacia |
+|---|---|---|---|
+| `main` | Código en producción | — | — |
+| `develop` | Integración continua | `main` | `main` (via release) |
+| `feature/*` | Nuevas funcionalidades | `develop` | `develop` (via PR) |
+| `release/*` | Preparación de versión | `develop` | `main` + `develop` |
+| `hotfix/*` | Correcciones urgentes | `main` | `main` + `develop` |
 
--'feature/*' -- funcionalidades nuevas
+## Comandos esenciales
 
--'hotfix/*' correciones urgentes en produccion
-# Develop branch activa
+```bash
+# Nueva feature
+git checkout develop && git checkout -b feature/nombre
+
+# Merge con historial (no fast-forward)
+git merge --no-ff feature/nombre
+
+# Ver historial gráfico
+git log --oneline --graph --all
+Scripts incluidos
+    • scripts/sistema.sh — backup, limpieza y reporte del sistema
+    • scripts/verificar-permisos.sh — auditoría de usuario devops-deploy
+    • scripts/fix-log-perms.sh — hotfix de permisos (v1.1)
+Versiones
+    • v1.0 — release inicial con scripts de TP 1 y 2
+    • v1.1 — hotfix permisos de logs EOF
