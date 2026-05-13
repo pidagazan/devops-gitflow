@@ -1,5 +1,3 @@
-El README final del entregable
-cat > README.md << 'EOF'
 # DevOps Portfolio —  Path
 
 Demostración del flujo Gitflow aplicado a scripts de administración Linux.
